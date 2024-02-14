@@ -28,9 +28,8 @@ class ProductController extends Controller
     public function storeByCsv(StoreByCsvFormRequest $request, ProductService $service)
     {
         $productsCsvFile = $request->file('productsCsv');
-        $products = $service->storeByCsv($productsCsvFile);
+        $productsCount $service->storeByCsv($productsCsvFile);
 
-        return $products;
-        // return ProductResource::collection($products);
+        return $productsCount;
     }
 }
